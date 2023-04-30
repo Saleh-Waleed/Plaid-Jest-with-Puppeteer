@@ -34,6 +34,11 @@ describe('Example', () => {
     expect(text).toContain('ADD A NEW USER');
     });
 
+
+    it('Wait  ', async () => { 
+      await page.waitForTimeout(10000)
+    });
+
    
     it('Creating New User SALEH ', async () => {
         // Find the input field and type "Saleh"
@@ -49,7 +54,7 @@ describe('Example', () => {
       });
 
 
-      it('Basnk', async () => { 
+      it('Wait-', async () => { 
       await page.waitForTimeout(10000)
     });
 
@@ -106,11 +111,11 @@ it('Adding the Bank with Valid User Name', async () => {
     await page.waitForSelector('#plaid-link-iframe-1');
     const iframeElement = await page.$("#plaid-link-iframe-1");
     const iframeContent = await iframeElement.contentFrame();
-    // Find the input field and type "user_good"
+    // Find the input field and type "pass_good"
     await iframeContent.type('#aut-input-1', 'pass_good');
     });
 
-    it('Adding the Bank after giving In-Valid Credentials', async () => {
+    it('Adding the Bank after giving Valid Credentials', async () => {
       await page.waitForSelector('#plaid-link-iframe-1');
       const iframeElement = await page.$("#plaid-link-iframe-1");
       const iframeContent = await iframeElement.contentFrame();
@@ -127,6 +132,10 @@ it('Adding the Bank with Valid User Name', async () => {
       const iframeContent = await iframeElement.contentFrame();
     const checkbox = await iframeContent.$('#userSelectionSelectAllToggle');
     await checkbox.click();
+  });
+
+  it('Basnk', async () => { 
+    await page.waitForTimeout(10000)
   });
   
   it('Adding the Banks with all the checkboxes selected', async () => {
