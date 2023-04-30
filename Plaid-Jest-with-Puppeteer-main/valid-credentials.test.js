@@ -7,13 +7,13 @@ let page;
 describe('Example', () => {
 
     beforeAll(async () => {
-        jest.setTimeout(20000); // change timeout to 25 seconds
+        jest.setTimeout(20000); // change timeout to 20 seconds
         browser = await puppeteer.launch({ headless: false });
         page = await browser.newPage();
         //Visiting the Plaid-Pattern Website
         await page.goto('https://pattern.plaid.com/');
   
-});
+}, 20000 );
  
  
   it('Wait', async () => {
